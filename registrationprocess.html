@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+
+        .form-container {
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            margin: auto;
+            border-radius: 6px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Register</h2>
+
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" id="name">
+        <div class="error" id="nameError"></div>
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" id="email">
+        <div class="error" id="emailError"></div>
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password">
+        <div class="error" id="passwordError"></div>
+    </div>
+
+    <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" id="confirmPassword">
+        <div class="error" id="confirmError"></div>
+    </div>
+
+    <button id="registerBtn">Register</button>
+</div>
+
+<script>
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("confirmPassword");
+
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const passwordError = document.getElementById("passwordError");
+    const confirmError = document.getElementById("confirmError");
+
+    // Email validation using regex
+    function validateEmail() {
+        const emailRegex = /@/;
+        if (!emailRegex.test(emailInput.value)) {
+            emailError.textContent = "Email must include @";
+        } else {
+            emailError.textContent = "";
+        }
+    }
+
+    // Password length validation
+    function validatePassword() {
+        if (passwordInput.value.length < 8) {
+            passwordError.textContent = "Password must be at least 8 characters";
+        } else {
+            passwordError.textContent = "";
+        }
+    }
+
+    // Password match validation
+    function validateConfirmPassword() {
+        if (passwordInput.value !== confirmPasswordInput.value) {
+            confirmError.textContent = "Passwords do not match";
+        } else {
+            confirmError.textContent = "";
+        }
+    }
+
+    // Real-time event listeners
+    emailInput.addEventListener("input", validateEmail);
+    passwordInput.addEventListener("input", validatePassword);
+    confirmPasswordInput.addEventListener("input", validateConfirmPassword);
+</script>
+
+</body>
+</html>

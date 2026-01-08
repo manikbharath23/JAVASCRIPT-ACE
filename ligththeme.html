@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lorem ipsum, dolor sit amet consectetur?</p>
+<button id="btn1">click here</button>    
+
+<script>
+    let btn1=document.getElementById("btn1")
+    let body=document.body
+    let current='light'
+
+btn1.addEventListener("click",()=>{
+    if(current=='light'){
+        current='dark'
+        body.style.backgroundColor="black"
+        body.style.color='white'
+        btn1.textContent="light mode "
+        body.style.transitionDuration='2s'
+    }
+    else{
+        current='light'
+        body.style.backgroundColor="white"
+        body.style.color='black'
+        btn1.textContent="dark mode "
+    }
+})
+</script>
+</body>
+</html>

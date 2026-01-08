@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="checkbox" name="" id="checkbox" onChange="enable()">
+<br>
+<label for="">i agree</label>
+<button id="submit" disabled>submit</button>
+
+<script>
+    function enable(){
+let checkbox=document.getElementById("checkbox");
+let submit=document.getElementById("submit")
+submit.disabled=!checkbox.checked;
+}
+</script>
+</body>
+</html>

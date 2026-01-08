@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Card Layout</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card h3 {
+    margin: 10px 0;
+  }
+
+  .card p {
+    padding: 0 10px 10px;
+    font-size: 14px;
+    color: #555;
+  }
+
+  .card button {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .card button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h2>Responsive 3-Card Layout</h2>
+<div class="card-container">
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200" alt="Card 1">
+    <h3>Card One</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <button>Learn More</button>
+  </div>
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200" alt="Card 2">
+    <h3>Card Two</h3>
+    <p>Curabitur vel sem at sapien tincidunt bibendum.</p>
+    <button>Learn More</button>
+  </div>
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200" alt="Card 3">
+    <h3>Card Three</h3>
+    <p>Vestibulum ante ipsum primis in faucibus orci luctus.</p>
+    <button>Learn More</button>
+  </div>
+</div>
+
+</body>
+</html>
